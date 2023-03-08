@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import books
-from .models import books
+'''
 class bookserializer(serializers.Serializer):
     name = serializers.CharField()
     title = serializers.CharField()
@@ -18,4 +18,10 @@ class bookserializer(serializers.Serializer):
             serial_number=validated_data['serial_number'],
             price=validated_data['price']
             )
+
+'''
+class bookserializer(serializers.ModelSerializer):
+    class Meta:
+        model = books
+        fields = '__all__'
 
